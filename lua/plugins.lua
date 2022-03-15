@@ -26,36 +26,57 @@ local plugins = {
   -- Color scheme
   { 'EdenEast/nightfox.nvim', },
   {
+    'neovim/nvim-lspconfig',
+    requires = { 'williamboman/nvim-lsp-installer', },
+    config = function()
+      require('config.lsp')
+    end,
+  },
+  {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-nvim-lsp',
+      'L3MON4D3/LuaSnip',
+    },
+    config = function()
+      require('config.cmp').setup()
+    end,
+  },
+  {
+    'L3MON4D3/LuaSnip',
+    requires = { 'saadparwaiz1/cmp_luasnip', },
+  },
+  {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     config = function()
-      require('config.treesitter')
+      require('config.treesitter').setup()
     end,
   },
   {
     'kyazdani42/nvim-tree.lua',
     requires = { 'kyazdani42/nvim-web-devicons', },
     config = function()
-      require('config.nvim-tree')
+      require('config.nvim-tree').setup()
     end,
   },
   {
     'akinsho/bufferline.nvim',
     config = function()
-      require('config.bufferline')
+      require('config.bufferline').setup()
     end,
   },
   {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', },
     config = function()
-      require('config.lualine')
+      require('config.lualine').setup()
     end,
   },
   {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      require('config.indent-blankline')
+      require('config.indent-blankline').setup()
     end,
   },
 }

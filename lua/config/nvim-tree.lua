@@ -1,6 +1,11 @@
-local tree = require('nvim-tree')
+local ok, tree = pcall(require, 'nvim-tree')
+if not ok then
+  return
+end
 
-tree.setup({
+local M = {}
+
+local config = {
   disable_netrw = true,
   hijack_netrw = true,
   open_on_setup = false,
@@ -101,4 +106,10 @@ tree.setup({
       },
     },
   },
-})
+}
+
+M.setup = function()
+  tree.setup(config)
+end
+
+return M
