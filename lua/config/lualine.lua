@@ -1,6 +1,11 @@
-local lualine = require('lualine')
+local ok, lualine = pcall(require, 'lualine')
+if not ok then
+  return
+end
 
-lualine.setup({
+local M = {}
+
+local config = {
   options = {
     icons_enabled = true,
     theme = 'nightfox',
@@ -12,4 +17,10 @@ lualine.setup({
   extensions = {
     'nvim-tree',
   },
-})
+}
+
+M.setup = function()
+  lualine.setup(config)
+end
+
+return M

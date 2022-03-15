@@ -1,7 +1,12 @@
-local cmp = require('cmp')
+local ok, cmp = pcall(require, 'cmp')
+if not ok then
+  return
+end
 local luasnip = require('luasnip')
 
-cmp.setup({
+local M = {}
+
+local config = {
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -40,4 +45,10 @@ cmp.setup({
     { name = 'nvim_lsp', },
     { name = 'luasnip', },
   },
-})
+}
+
+M.setup = function()
+  cmp.setup(config)
+end
+
+return M

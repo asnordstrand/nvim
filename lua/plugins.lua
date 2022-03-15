@@ -39,7 +39,7 @@ local plugins = {
       'L3MON4D3/LuaSnip',
     },
     config = function()
-      require('config.cmp')
+      require('config.cmp').setup()
     end,
   },
   {
@@ -50,33 +50,33 @@ local plugins = {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     config = function()
-      require('config.treesitter')
+      require('config.treesitter').setup()
     end,
   },
   {
     'kyazdani42/nvim-tree.lua',
     requires = { 'kyazdani42/nvim-web-devicons', },
     config = function()
-      require('config.nvim-tree')
+      require('config.nvim-tree').setup()
     end,
   },
   {
     'akinsho/bufferline.nvim',
     config = function()
-      require('config.bufferline')
+      require('config.bufferline').setup()
     end,
   },
   {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', },
     config = function()
-      require('config.lualine')
+      require('config.lualine').setup()
     end,
   },
   {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      require('config.indent-blankline')
+      require('config.indent-blankline').setup()
     end,
   },
 }

@@ -1,6 +1,11 @@
-local bufferline = require('bufferline')
+local ok, bufferline = pcall(require, 'bufferline')
+if not ok then
+  return
+end
 
-bufferline.setup({
+local M = {}
+
+local config = {
   options = {
     mode = 'buffers',
     numbers = 'none',
@@ -25,4 +30,10 @@ bufferline.setup({
     show_tab_indicators = true,
     separator_style = 'thin',
   },
-})
+}
+
+M.setup = function()
+  bufferline.setup(config)
+end
+
+return M
