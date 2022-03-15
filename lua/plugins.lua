@@ -26,6 +26,27 @@ local plugins = {
   -- Color scheme
   { 'EdenEast/nightfox.nvim', },
   {
+    'neovim/nvim-lspconfig',
+    requires = { 'williamboman/nvim-lsp-installer', },
+    config = function()
+      require('config.lsp')
+    end,
+  },
+  {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-nvim-lsp',
+      'L3MON4D3/LuaSnip',
+    },
+    config = function()
+      require('config.cmp')
+    end,
+  },
+  {
+    'L3MON4D3/LuaSnip',
+    requires = { 'saadparwaiz1/cmp_luasnip', },
+  },
+  {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     config = function()
