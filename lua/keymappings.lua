@@ -1,10 +1,17 @@
-local opts = { noremap = true, silent = true }
+local mappings = {
+  ['<Space>e'] = '<cmd>lua vim.diagnostic.open_float()<CR>',
+  ['[d'] = '<cmd>lua vim.diagnostic.goto_prev()<CR>',
+  [']d'] = '<cmd>lua vim.diagnostic.goto_next()<CR>',
+  ['<Space>q'] = '<cmd>lua vim.diagnostic.setloclist()<CR>',
+  ['<C-n>'] = ':NvimTreeToggle<CR>',
+  ['<leader>r'] = ':NvimTreeRefresh<CR>',
+  ['<leader>n'] = ':NvimTreeFindFile<CR>',
+  ['[b'] = ':BufferLineCycleNext<CR>',
+  [']b'] = ':BufferLineCyclePrev<CR>',
+  ['<leader>w'] = ':bdelete!<CR>',
+}
 
-vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
-vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
-vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
-vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<cr>', opts)
-
-vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<cr>', opts)
-vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<cr>', opts)
-vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeFindFile<cr>', opts)
+for k, v in pairs(mappings) do
+  local opts = { noremap = true, silent = true }
+  vim.api.nvim_set_keymap('n', k, v, opts)
+end
