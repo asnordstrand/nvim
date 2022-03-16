@@ -28,6 +28,8 @@ local config = {
         highlight = 'Directory',
       },
     },
+    show_buffer_icons = true,
+    show_buffer_close_icons = false,
   },
 }
 
