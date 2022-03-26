@@ -43,6 +43,12 @@ local plugins = {
     end,
   },
   {
+    'windwp/nvim-autopairs',
+    config = function()
+      require('config.autopairs').setup()
+    end,
+  },
+  {
     'L3MON4D3/LuaSnip',
     requires = { 'saadparwaiz1/cmp_luasnip', },
   },

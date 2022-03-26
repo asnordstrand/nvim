@@ -7,6 +7,9 @@ local config = {
     enable = true,
     additional_vim_regex_highlighting = true,
   },
+  indent = {
+    enable = true,
+  },
 }
 
 M.setup = function()
