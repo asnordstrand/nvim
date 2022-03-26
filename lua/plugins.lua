@@ -29,7 +29,7 @@ local plugins = {
     'neovim/nvim-lspconfig',
     requires = { 'williamboman/nvim-lsp-installer', },
     config = function()
-      require('config.lsp')
+      require('config.lsp').setup()
     end,
   },
   {
