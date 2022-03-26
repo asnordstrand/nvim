@@ -24,7 +24,7 @@ local plugins = {
   -- Packer can manage itself
   { 'wbthomason/packer.nvim', },
   -- Color scheme
-  { 'EdenEast/nightfox.nvim', },
+  { 'rebelot/kanagawa.nvim', },
   {
     'neovim/nvim-lspconfig',
     requires = { 'williamboman/nvim-lsp-installer', },

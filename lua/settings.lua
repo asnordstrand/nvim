@@ -11,6 +11,7 @@ local options = {
   number = true,
   cursorline = true,
   wrap = false,
+  mouse = 'a',
   splitbelow = true,
   splitright = true,
   incsearch = true,
