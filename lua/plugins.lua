@@ -1,16 +1,18 @@
-local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  _G.packer_bootstrap = vim.fn.system({
-    'git',
-    'clone',
-    '--depth',
-    '1',
-    'https://github.com/wbthomason/packer.nvim',
-    install_path
-  })
-end
+local ok, packer = pcall(require, 'packer')
 
-local packer = require('packer')
+if not ok then
+  local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+    _G.packer_bootstrap = vim.fn.system({
+      'git',
+      'clone',
+      '--depth',
+      '1',
+      'https://github.com/wbthomason/packer.nvim',
+      install_path
+    })
+  end
+end
 
 -- Automatically run :PackerCompile when plugins.lua is updated
 vim.cmd([[
