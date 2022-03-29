@@ -97,6 +97,18 @@ local plugins = {
       require('config.indent-blankline').setup()
     end,
   },
+  {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('config.comment').setup()
+    end
+  },
+  {
+    'folke/which-key.nvim',
+    config = function()
+      require('config.which-key').setup()
+    end,
+  },
 }
 
 return packer.startup(function(use)

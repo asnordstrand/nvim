@@ -15,13 +15,13 @@ M.setup = function()
       offsets = {
         {
           filetype = 'NvimTree',
-          text = 'File Explorer',
-          highlight = 'Directory',
+          text = 'Explorer',
+          highlight = 'PanelHeading',
         },
         {
           filetype = 'packer',
           text = 'Packer',
-          highlight = 'Directory',
+          highlight = 'PanelHeading',
         },
       },
     },

@@ -20,10 +20,13 @@ local options = {
   expandtab = true,
   tabstop = 2,
   shiftwidth = 2,
+  timeoutlen = 300,
 }
 
 vim.opt.shortmess:append 'c'
 vim.opt.swapfile = false
+
+vim.g.mapleader = '<Space>' and ' '
 
 for k, v in pairs(options) do
   vim.opt[k] = v
