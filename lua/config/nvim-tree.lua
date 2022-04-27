@@ -9,7 +9,7 @@ local config = {
   disable_netrw = true,
   hijack_netrw = true,
   open_on_setup = false,
-  ignore_on_buffer_on_setup = false,
+  ignore_buffer_on_setup = false,
   ignore_ft_on_setup = {},
   auto_reload_on_write = true,
   open_on_tab = false,
@@ -64,29 +64,6 @@ local config = {
   trash = {
     cmd = 'trash',
     require_confirm = true,
-  },
-  icons = {
-    default = '',
-    symlink = '',
-    git = {
-      unstaged = '✗',
-      staged = '✓',
-      unmerged = '',
-      renamed = '➜',
-      untracked = '★',
-      deleted = '',
-      ignored = '◌',
-    },
-    folder = {
-      arrow_open = '',
-      arrow_closed = '',
-      default = '',
-      open = '',
-      empty = '',
-      empty_open = '',
-      symlink = '',
-      symlink_open = '',
-    },
   },
   actions = {
     change_dir = {
