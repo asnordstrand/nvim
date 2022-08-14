@@ -23,7 +23,10 @@ local config = {
     nowait = true,
   },
   mappings = {
-    ['/'] = { [[<cmd>lua require('Comment.api').toggle_current_linewise()<CR>]], 'Comment', },
+    ['/'] = {
+      '<CMD>lua require("Comment.api").call("comment.linewise.current")<CR>g@$',
+      'Comment',
+    },
     w = { '<cmd>w!<CR>', 'Save', },
     q = { '<cmd>q!<CR>', 'Quit', },
     e = { '<cmd>NvimTreeToggle<CR>', 'Explorer', },
@@ -73,8 +76,10 @@ local config = {
     },
   },
   vmappings = {
-    ['/'] = { [[<esc><cmd>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>]], 'Comment',
-    },
+    ['/'] = {
+      '<ESC><CMD>lua require("Comment.api").locked("comment.linewise")(vim.fn.visualmode())<CR>',
+      'Comment',
+    }
   },
 }
 
