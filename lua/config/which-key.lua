@@ -24,7 +24,7 @@ local config = {
   },
   mappings = {
     ['/'] = {
-      '<CMD>lua require("Comment.api").call("comment.linewise.current")<CR>g@$',
+      '<CMD>lua require("Comment.api").toggle.linewise.current()<CR>',
       'Comment',
     },
     w = { '<cmd>w!<CR>', 'Save', },
