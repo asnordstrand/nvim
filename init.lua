@@ -1,12 +1,26 @@
-if vim.fn.has('nvim-0.8') ~= 1 then
+if vim.fn.has("nvim-0.8") ~= 1 then
   vim.schedule(function()
-    local level = vim.log.levels.WARN
-    vim.notify('Unsupported Neovim version found. Neovim v0.8+ is required.', level)
+    vim.notify("Neovim v0.8+ is required.", vim.log.levels.WARN)
   end)
 end
 
-require('settings')
-require('keymappings')
-require('plugins')
+require("options")
+require("colorscheme")
 
-vim.cmd('colorscheme kanagawa')
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim",
+    "--branch=stable",
+    lazypath,
+  })
+end
+
+vim.opt.rtp:prepend(lazypath)
+
+vim.g.mapleader = "<space>" and " "
+
+require("lazy").setup("plugins")
