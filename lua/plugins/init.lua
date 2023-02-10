@@ -11,6 +11,15 @@ local plugins = {
     end,
   },
   {
+    "nvim-tree/nvim-web-devicons",
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require("plugins.configs.treesitter")
+    end,
+  },
+  {
     "folke/which-key.nvim",
     config = function()
       require("plugins.configs.which-key")
@@ -26,6 +35,18 @@ local plugins = {
     "numToStr/Comment.nvim",
     config = function()
       require("plugins.configs.comment")
+    end,
+  },
+  {
+    "akinsho/bufferline.nvim",
+    config = function()
+      require("plugins.configs.bufferline")
+    end,
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("plugins.configs.indent-blankline")
     end,
   },
 }
