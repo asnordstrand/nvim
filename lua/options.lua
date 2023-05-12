@@ -1,5 +1,5 @@
 local options = {
-  fileencoding = "utf-8", 
+  fileencoding = "utf-8",
   mouse = "a",
   termguicolors = true,
   showmode = false,
