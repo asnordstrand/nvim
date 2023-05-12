@@ -5,6 +5,33 @@ local plugins = {
     priority = 1000,
   },
   {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("plugins.configs.lsp")
+    end,
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    config = function()
+      require("plugins.configs.cmp")
+    end,
+  },
+  {
+    "hrsh7th/cmp-nvim-lsp",
+  },
+  {
+    "williamboman/mason.nvim",
+    run = ":MasonUpdate",
+    config = function()
+      require("mason").setup({
+        PATH = "prepend",
+      })
+    end,
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+  },
+  {
     "nvim-tree/nvim-tree.lua",
     config = function()
       require("plugins.configs.nvim-tree")
