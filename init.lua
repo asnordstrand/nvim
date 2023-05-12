@@ -5,7 +5,7 @@ if vim.fn.has("nvim-0.8") ~= 1 then
 end
 
 require("options")
-require("colorscheme")
+--require("colorscheme")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
