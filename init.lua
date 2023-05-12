@@ -4,9 +4,6 @@ if vim.fn.has("nvim-0.8") ~= 1 then
   end)
 end
 
-require("options")
---require("colorscheme")
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -18,9 +15,14 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
-
 vim.opt.rtp:prepend(lazypath)
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.g.mapleader = "<space>" and " "
 
 require("lazy").setup("plugins")
+
+require("options")
+require("colorscheme")
